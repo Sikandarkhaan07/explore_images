@@ -1,5 +1,4 @@
 import 'dart:core';
-import 'dart:core';
 
 import 'package:flutter/material.dart';
 
@@ -19,6 +18,9 @@ class TabView extends StatelessWidget {
   Widget build(BuildContext context) {
     return TabBarView(
       children: [
+        Tab(
+          child: DisplayCommonImage('All', allImages),
+        ),
         Tab(
           child: DisplayCommonImage('Cat', filterImages('cat')),
         ),

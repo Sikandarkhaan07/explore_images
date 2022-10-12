@@ -12,7 +12,7 @@ class DisplayCommonImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         crossAxisSpacing: 5,
         mainAxisSpacing: 5,

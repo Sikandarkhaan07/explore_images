@@ -36,13 +36,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       initialIndex: 0,
       child: Scaffold(
         backgroundColor: Colors.white60,
         appBar: AppBar(
           backgroundColor: Colors.black45,
-          title: const Text('Image lover'),
+          title: const Text('Explore Images'),
+          centerTitle: true,
           bottom: TabBar(
             isScrollable: true,
             padding: const EdgeInsets.symmetric(
@@ -55,47 +56,30 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             splashBorderRadius: BorderRadius.circular(10),
             tabs: [
-              Container(
-                height: 30,
-                width: 60,
-                child: const Tab(
-                  child: Text(
-                    'Cat',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                height: 30,
-                width: 60,
-                child: const Tab(
-                  child: Text(
-                    'Dog',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                height: 30,
-                width: 60,
-                child: const Tab(
-                  child: Text(
-                    'Tiger',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-              ),
+              buildTab('All'),
+              buildTab('Cat'),
+              buildTab('Dog'),
+              buildTab('Tiger'),
             ],
           ),
         ),
         body: TabView(allImages),
       ),
     );
+  }
+
+  Container buildTab(String title) {
+    return Container(
+              height: 30,
+              width: 60,
+              child: Tab(
+                child: Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            );
   }
 }
